@@ -15,6 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+// mudando a sequencia de busca do cypress
+Cypress.SelectorPlayground.defaults({
+    selectorPriority: ['id','class','attributes','data-cy','data-test','data-testid','class','tag','nth-child']
+})
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
