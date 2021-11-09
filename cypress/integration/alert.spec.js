@@ -10,7 +10,7 @@ describe('Trabalhando com alerts',() =>{
    // beforeEach executa a ação antes de cada teste 
     beforeEach(()=>{
         cy.reload()
-        
+        // teste
         beforeEach(()=>{
             cy.reload()
             
