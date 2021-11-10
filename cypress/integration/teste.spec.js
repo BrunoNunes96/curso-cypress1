@@ -2,15 +2,16 @@
 
 describe('teste de login do facebook',()=>{
     beforeEach(()=>{
-        cy.visit('https://www.facebook.com/')
+        
     })
-    it('Logando no face',()=>{cy.get('#u_0_2_AA').click()
-        cy.get('#email').type('bruno_nunes96@outlook.com')
-            .should('have.value', 'bruno_nunes96@outlook.com')   
-        cy.get('#pass') .type('BrUnO@@@001')    
-            .should('have.value', 'BrUnO@@@001')  
-                     
+    it('Testando widgets',()=>{
+        cy.visit('https://resdigitaisstg.wpengine.com/')
+        cy.get('#home-sidebar > .widget-signup > .widget-content > #rdm_test > #email').type("bruno_nunes92@outlook.com")
+        cy.get('#home-sidebar > .widget-signup > .widget-content > #rdm_test > .btn-base').click()   
+        cy.visit('https://app.rdstation.com.br/signup?trial_origin=rds_blog&_ga=2.11434484.1358757707.1636565568-378108872.1636565568')
+       // it(' pagina de teste do RD Station',()=>{
+       //     cy.visit('https://app.rdstation.com.br/signup?trial_origin=rds_blog&_ga=2.11434484.1358757707.1636565568-378108872.1636565568')
+        })
 
     })      
 
-})

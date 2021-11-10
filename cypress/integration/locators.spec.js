@@ -13,4 +13,11 @@ describe('Trabalhando com locators',() => {
         cy.get("#tabelaUsuarios td:contains('Doutorado'):eq(0) ~ td:eq(3) > input")
        
     })
+
+    it.only('usando o xpath',()=>{
+        cy.xpath("//input[contains(@onclick, 'Francisco')]")
+        cy.xpath("//table[@id='tabelaUsuarios']//td[contains(.,'Francisco')]/..//input[@type='text']")
+        cy.xpath("//*[@data-test='data2']")
+
+    })
 })
