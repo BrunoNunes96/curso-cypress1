@@ -11,10 +11,6 @@ describe('Trabalhando com alerts',() =>{
     beforeEach(()=>{
         cy.reload()
         
-        beforeEach(()=>{
-            cy.reload()
-            
-        })
     })
     // trabalhando com alert em msg e fazendo uma acertiva no texto
     it('alert',()=>{
@@ -22,6 +18,7 @@ describe('Trabalhando com alerts',() =>{
         cy.on('window:alert', msg => {
             console.log(msg)
             expect(msg).to.be.equal('Alert Simples')
+            
         })
     })
     // aula 31 - usando stub para substituir o metodo acima 
@@ -66,7 +63,7 @@ describe('Trabalhando com alerts',() =>{
             cy.stub(win, 'prompt').returns('41')
         })
 
-     /  cy.on('window:confirm', msg => {        
+       cy.on('window:confirm', msg => {        
            expect(msg).to.be.equal('Era 41?')
          })
 
@@ -77,10 +74,10 @@ describe('Trabalhando com alerts',() =>{
      cy.get('#prompt').click()
     })
 
-    it("Desafio do cadastrar",()=>{
+    it.only("Desafio do cadastrar",()=>{
         cy.get('#formCadastrar').click()
 
-        cy.on('windows:alert', msg=>{
+        cy.on('window:alert', msg=>{
             expect(msg).to.be.equal('Nome eh obrigatorio')
         })
         cy.get('#formNome').type('Bruno')      
@@ -89,8 +86,8 @@ describe('Trabalhando com alerts',() =>{
         cy.get('#formCadastrar').click()
     
 
-        cy.on('windows:alert', msg1=>{
-            expect(msg1).to.be.equal('Sobre')
+        cy.on('window:alert', msg1=>{
+            expect(msg1).to.be.equal('Nome eh obrigatorio')
         })
         
     
