@@ -18,7 +18,7 @@ import './commands'
 require('cypress-xpath')
 // mudando a sequencia de busca do cypress
 Cypress.SelectorPlayground.defaults({
-    selectorPriority: ['id','class','attributes','data-cy','data-test','data-testid','class','tag','nth-child']
+    selectorPriority: ['data-cy','data-test','data-testid','id','class','attributes','class','tag','nth-child']
 })
 
 // Alternatively you can use CommonJS syntax:
